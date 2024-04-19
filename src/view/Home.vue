@@ -1,15 +1,15 @@
 <template>
-    <div class="home">
-        <h1>Login con oauth</h1>
-        <!-- Revisa la librería se encuentra cargando antes de mostrar los botones de acceso -->
-        <div v-if="!$auth.loading">
-            <!-- muestra el botón de login si no está autentificado -->
-            <button v-if="!$auth.isAuthenticated" @click="login">Log in</button>
-            <!-- muestra el botón de Log out si está autentificado -->
-            <button v-if="$auth.isAuthenticated" @click="logout">Log out</button>
-        </div>
-
-    </div>
+    <b-container class="home">
+        <b-row>
+            <b-col>
+                <h1>Login con oauth</h1>
+                <div v-if="!$auth.loading">
+                    <button class="btn btn-success" v-if="!$auth.isAuthenticated" @click="login">Log in</button>
+                    <button class="btn btn-danger" v-if="$auth.isAuthenticated" @click="logout">Log out</button>
+                </div>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
